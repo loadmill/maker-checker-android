@@ -1,8 +1,18 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 }
+
+// read makerChecker.baseUrl from local.properties, fallback to Heroku URL
+val localProps = Properties().apply {
+    val f = rootProject.file("local.properties")
+    if (f.exists()) f.inputStream().use { load(it) }
+}
+val baseUrl: String = (localProps.getProperty("makerChecker.baseUrl")
+    ?: "https://maker-checker-036efc6aec77.herokuapp.com/").trim()
 
 android {
     namespace = "com.loadmill.makerchecker"
@@ -11,10 +21,13 @@ android {
     defaultConfig {
         applicationId = "com.loadmill.makerchecker"
         minSdk = 24
-        targetSdk = 35   // keep 35 to avoid behavior changes
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // expose to code as BuildConfig.BASE_URL
+        buildConfigField("String", "BASE_URL", "\"$baseUrl\"")
     }
 
     buildTypes {
@@ -33,7 +46,10 @@ android {
     }
     kotlinOptions { jvmTarget = "17" }
 
-    buildFeatures { compose = true }
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -55,4 +71,9 @@ dependencies {
 
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation("androidx.compose.runtime:runtime-saveable")
+    implementation("androidx.compose.material:material-icons-extended")
+
+
 }
