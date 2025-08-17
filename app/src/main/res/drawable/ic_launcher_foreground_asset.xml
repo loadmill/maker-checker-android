@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="400"
+    android:viewportHeight="400">
+
+    <!-- Pinwheel fins (exactly your SVG) -->
+    <path
+        android:fillColor="#4491e9"
+        android:pathData="M211.35,214.59l60.18,59.79c1.44,1.43,3.71,1.4,5.06,-0.07l56.7,-57.98c2.19,-2.37,0.47,-6.34,-2.71,-6.3l-116.88,-1.82c-3.19,0.04,-4.67,4.06,-2.35,6.37Z"/>
+    <path
+        android:fillColor="#00bcd6"
+        android:pathData="M203.76,194.93l67.23,-48.66c1.61,-1.16,1.98,-3.48,0.83,-5.16l-48.04,-70.5c-1.85,-2.72,-5.92,-1.82,-6.44,1.44l-19.19,119.16c-0.52,3.25,3.02,5.61,5.61,3.73Z"/>
+    <path
+        android:fillColor="#4491e9"
+        android:pathData="M187.4,187.16l-48.07,-70.55c-1.15,-1.69,-3.39,-2.11,-4.99,-0.95l-67.11,52.01c-2.59,1.88,-1.65,6.11,1.49,6.71l115.18,18.54c3.15,0.6,5.36,-3.04,3.5,-5.76Z"/>
+    <path
+        android:fillColor="#00bcd6"
+        android:pathData="M192.82,205.07l-67.23,48.66c-1.61,1.16,-1.98,3.48,-0.83,5.16l48.04,70.5c1.85,2.72,5.92,1.82,6.44,-1.44l19.19,-119.16c0.52,-3.25,-3.02,-5.61,-5.61,-3.73Z"/>
+
+    <!-- Check (thick white outline, green core) -->
+    <path
+        android:pathData="M60,260 L165,360 L350,150"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="44"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent"/>
+    <path
+        android:pathData="M60,260 L165,360 L350,150"
+        android:strokeColor="#2ECC71"
+        android:strokeWidth="32"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="@android:color/transparent"/>
+</vector>
