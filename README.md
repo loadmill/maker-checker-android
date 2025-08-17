@@ -7,6 +7,8 @@ The app has two roles:
 * **Maker** – creates a transfer (amount + recipient)
 * **Checker** – approves or rejects pending transfers
 
+https://github.com/user-attachments/assets/a787aba0-9a2d-4471-96f5-4fc8845028ed
+
 ---
 
 ## Repo layout (Android)
