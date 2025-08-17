@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
-    <base-config cleartextTrafficPermitted="false">
+    <!-- Global policy: allow cleartext and trust system + user CAs -->
+    <base-config cleartextTrafficPermitted="true">
         <trust-anchors>
             <certificates src="system" />
-            <certificates src="user" />
+            <certificates src="user" />  <!-- enables HTTPS MITM with your proxy root CA -->
         </trust-anchors>
     </base-config>
+
+    <!-- Optional: you can scope cleartext to just the local dev host
+         If you keep base-config true, this block is not required. Keeping it
+         here as a reference in case you want to tighten later.
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">10.0.2.2</domain>
+    </domain-config>
+    -->
 </network-security-config>
