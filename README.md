@@ -196,4 +196,3 @@ Steps:
 * Release build is **not hardened** (no R8 shrinking, user-CA trusted, verbose HTTP logging).
 * This is deliberate to make traffic capture & test generation easy for demos.
 * Do **not** reuse this configuration for production apps.
-* 
